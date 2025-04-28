@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+VITE_SERVICE_ID = service_we5v3qb
+VITE_TEMPLATE_ID = template_umuszdo
+VITE_PUBLIC_KEY = jRfGLISWyKvz_gAqZ
