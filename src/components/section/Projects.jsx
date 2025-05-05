@@ -104,7 +104,7 @@ export const Projects = () => {
                         className="text-blue-400 hover:text-blue-300 transition-colors my-4">View Project </a>
                     </div>
                 </div>
-                <div className="p-6 rounded-xl border border-gray/10 hover:-translate-y-1 hover:border-blue-500/30
+                                <div className="p-6 rounded-xl border border-gray/10 hover:-translate-y-1 hover:border-blue-500/30
                 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
                     <h3 className="text-gray-400 text-xl font-bold mb-2">IQbase</h3>
                     <p className="text-gray-400">IQbase is a learning management system where users can get courses and also become educators.</p>
