@@ -1,14 +1,14 @@
 [build]
-  command = "npm install && npm run build"
-  publish = "dist"
-  functions = "functions"
+command = "npm install && npm run build"
+publish = "dist"
+functions = "functions"
 
 [build.environment]
-  NODE_VERSION = "22.14.0"
-  VITE_SERVICE_ID = "service_we5v3qb"
-  VITE_TEMPLATE_ID = "template_umuszdo"
-  VITE_PUBLIC_KEY = "jRfGLISWyKvz_gAqZ"
-  CI = "false"  # Disable CI behavior that might limit output
+NODE_VERSION = "22.14.0"
+VITE_SERVICE_ID = "service_we5v3qb"
+VITE_TEMPLATE_ID = "template_umuszdo"
+VITE_PUBLIC_KEY = "jRfGLISWyKvz_gAqZ"
+CI = "false"
 
 [context.production.environment]
-  NODE_ENV = "production"
+NODE_ENV = "production"
