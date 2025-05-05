@@ -4,3 +4,4 @@ publish = "build/"
 
 [build.environment]
 NODE_VERSION = "18.16.1"
+ignore = "python-version"
