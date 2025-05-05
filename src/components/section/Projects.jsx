@@ -12,7 +12,7 @@ export const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Project 1 */}
             <div className="p-4 sm:p-6 rounded-xl border border-gray-200/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_12px_rgba(59,130,246,0.1)] transition-all duration-300 flex flex-col h-full">
-              <h3 className="text-gray-800 dark:text-gray-200 text-lg sm:text-xl font-bold mb-2">Fast Medic</h3>
+              <h3 className="text-gray-800 dark:text-gray-500 text-lg sm:text-xl font-bold mb-2">Fast Medic</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
                 Web platform providing quick access to authentic medical solutions and health education, empowering users to make informed decisions.
               </p>
@@ -38,7 +38,7 @@ export const Projects = () => {
 
             {/* Project 2 */}
             <div className="p-4 sm:p-6 rounded-xl border border-gray-200/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_12px_rgba(59,130,246,0.1)] transition-all duration-300 flex flex-col h-full">
-              <h3 className="text-gray-800 dark:text-gray-200 text-lg sm:text-xl font-bold mb-2">Swift Moove</h3>
+              <h3 className="text-gray-800 dark:text-gray-500 text-lg sm:text-xl font-bold mb-2">Swift Moove</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
                 Financial platform with intuitive portfolio management tools and expert-led courses for informed investment decisions.
               </p>
@@ -64,7 +64,7 @@ export const Projects = () => {
 
             {/* Project 3 */}
             <div className="p-4 sm:p-6 rounded-xl border border-gray-200/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_12px_rgba(59,130,246,0.1)] transition-all duration-300 flex flex-col h-full">
-              <h3 className="text-gray-800 dark:text-gray-200 text-lg sm:text-xl font-bold mb-2">Swift Pay</h3>
+              <h3 className="text-gray-800 dark:text-gray-500 text-lg sm:text-xl font-bold mb-2">Swift Pay</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
                 Secure online banking app for money transfers, bill payments, and financial management.
               </p>
@@ -90,7 +90,7 @@ export const Projects = () => {
 
             {/* Project 4 */}
             <div className="p-4 sm:p-6 rounded-xl border border-gray-200/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_12px_rgba(59,130,246,0.1)] transition-all duration-300 flex flex-col h-full">
-              <h3 className="text-gray-800 dark:text-gray-200 text-lg sm:text-xl font-bold mb-2">Quotes Generator</h3>
+              <h3 className="text-gray-800 dark:text-gray-500 text-lg sm:text-xl font-bold mb-2">Quotes Generator</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
                 Discover inspiring words with our library of motivational quotes, perfect for sparking creativity.
               </p>
@@ -116,7 +116,7 @@ export const Projects = () => {
 
             {/* Project 5 */}
             <div className="p-4 sm:p-6 rounded-xl border border-gray-200/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_12px_rgba(59,130,246,0.1)] transition-all duration-300 flex flex-col h-full">
-              <h3 className="text-gray-800 dark:text-gray-200 text-lg sm:text-xl font-bold mb-2">Robot Friends</h3>
+              <h3 className="text-gray-800 dark:text-gray-500 text-lg sm:text-xl font-bold mb-2">Robot Friends</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
                 React app that filters through and displays robot names when searched.
               </p>
@@ -142,7 +142,7 @@ export const Projects = () => {
 
             {/* Project 6 */}
             <div className="p-4 sm:p-6 rounded-xl border border-gray-200/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_12px_rgba(59,130,246,0.1)] transition-all duration-300 flex flex-col h-full">
-              <h3 className="text-gray-800 dark:text-gray-200 text-lg sm:text-xl font-bold mb-2">IQbase</h3>
+              <h3 className="text-gray-800 dark:text-gray-500 text-lg sm:text-xl font-bold mb-2">IQbase</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
                 Learning management system where users can take courses and become educators.
               </p>
