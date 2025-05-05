@@ -1,16 +1,22 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  root: './', // Explicitly set root directory
+  plugins: [react()],
+  css: {
+    postcss: {
+      plugins: [tailwindcss()],
+    },
+  },
+  root: './',
   build: {
-    outDir: 'dist', // Ensure this matches Netlify's publish directory
+    outDir: 'dist',
     rollupOptions: {
       input: {
-        main: './index.html' // Explicit entry point
-      }
-    }
-  }
-})
+        main: './index.html',
+      },
+    },
+  },
+});
+
