@@ -1,14 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
 export default defineConfig({
   plugins: [react()],
+  css: {
+    devSourcemap: true, // Helps with debugging
+    postcss: './postcss.config.js'
+  },
   build: {
     outDir: 'build',
-    rollupOptions: {
-      input: {
-        main: './index.html' // Ensure this path is correct
-      }
-    }
+    assetsDir: 'assets', // Ensures CSS goes to right folder
+    cssCodeSplit: true // Keep this enabled
   }
 })
