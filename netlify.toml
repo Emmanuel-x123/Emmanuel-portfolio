@@ -1,14 +1,6 @@
 [build]
 command = "npm install && npm run build"
-publish = "dist"
-functions = "functions"
+publish = "build/"
 
 [build.environment]
-NODE_VERSION = "20.12.1"
-VITE_SERVICE_ID = "service_we5v3qb"
-VITE_TEMPLATE_ID = "template_umuszdo"
-VITE_PUBLIC_KEY = "jRfGLISWyKvz_gAqZ"
-CI = "false"
-
-[context.production.environment]
-NODE_ENV = "production"
+NODE_VERSION = "18.16.1"
