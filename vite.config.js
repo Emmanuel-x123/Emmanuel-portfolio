@@ -1,12 +1,18 @@
+import { defineConfig } from 'vite';  // Make sure this import exists
+import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
+
 export default defineConfig({
   plugins: [react()],
   css: {
-    devSourcemap: true, // Helps with debugging
-    postcss: './postcss.config.js'
+    postcss: 'postcss.config.js',
   },
   build: {
     outDir: 'build',
-    assetsDir: 'assets', // Ensures CSS goes to right folder
-    cssCodeSplit: true // Keep this enabled
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html')
+      }
+    }
   }
-})
+});
