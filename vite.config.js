@@ -1,22 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
   plugins: [react()],
   css: {
-    postcss: {
-      plugins: [tailwindcss()],
-    },
-  },
-  root: './',
-  build: {
-    outDir: 'dist',
-    rollupOptions: {
-      input: {
-        main: './index.html',
-      },
-    },
+    postcss: 'postcss.config.js',
   },
 });
-
