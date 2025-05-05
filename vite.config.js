@@ -7,6 +7,7 @@ export default defineConfig({
     postcss: 'postcss.config.js',
   },
   root: './',
+  base: './',
   build: {
     outDir: 'dist',
     rollupOptions: {
