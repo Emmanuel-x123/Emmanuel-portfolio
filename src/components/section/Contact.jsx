@@ -86,7 +86,7 @@ export const Contact = () => {
                 required
                 rows={5}
                 value={formData.message}
-                className="w-full bg-gray-900/5 dark:bg-white/5 border border-gray-300/10 dark:border-gray-600/20 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500/70"
+                className="w-full bg-gray-900/5 dark:bg-white/5 border border-gray-300/10 dark:border-gray-600/20 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500/70"
                 placeholder="Your message here..."
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               />
