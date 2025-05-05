@@ -4,7 +4,7 @@
   functions = "functions"
 
 [build.environment]
-  NODE_VERSION = "18"  # Match your local Node version
+  NODE_VERSION = "22.14.0"
   VITE_SERVICE_ID = "service_we5v3qb"
   VITE_TEMPLATE_ID = "template_umuszdo"
   VITE_PUBLIC_KEY = "jRfGLISWyKvz_gAqZ"
