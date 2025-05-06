@@ -9,11 +9,13 @@ export const About = () => {
     "TailwindCSS",
     "React",
   ];
-  const backendSkills = [
-    "Python",
-    "Django",
-    "Javascript",
-    "RESTful APIs",
+  const softSkills = [
+    "Adaptability",
+    "Teamwork",
+    "flexibilty",
+    "Communication",
+    "Problem-solving",
+    "Creativity",
   ];
 
   return (
@@ -47,9 +49,9 @@ export const About = () => {
               
               {/* Backend Skills */}
               <div className="rounded-xl p-4 sm:p-6 hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-400">Backend</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-400">SoftSkills</h3>
                 <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, key) => (
+                  {softSkills.map((tech, key) => (
                     <span
                       key={key}
                       className="bg-blue-500/10 text-blue-500 py-1 px-2 sm:px-3 rounded-full text-xs sm:text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
