@@ -22,7 +22,7 @@ export const About = () => {
     "Python",
     "Django",
     "API Development",
-    "C#"
+    "C# .NET"
   ];
 
   return (
