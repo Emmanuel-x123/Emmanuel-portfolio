@@ -97,8 +97,7 @@ export const Projects = () => {
           <h2
             className="  text-center 
   text-4xl font-extrabold mb-12
-  bg-gradient-to-r from-blue-500 to-cyan-400
-  bg-clip-text text-transparent"
+   gradient-text"
           >
             Featured Projects
           </h2>
