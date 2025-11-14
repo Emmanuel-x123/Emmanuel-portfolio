@@ -36,7 +36,7 @@ export const About = () => {
         <div className="w-full max-w-6xl mx-auto">
 
           {/* Section Title */}
-          <h2 className="text-center text-3xl sm:text-4xl font-extrabold mb-12 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-center text-3xl sm:text-4xl font-extrabold mb-12 gradient-text">
             About Me
           </h2>
 
