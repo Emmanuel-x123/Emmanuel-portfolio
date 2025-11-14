@@ -74,11 +74,14 @@ html, body {
   animation: loading-bar 1.4s infinite linear;
 }
 
-.reveal-base {
-  transition: opacity 0.9s ease, transform 0.9s ease;
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+  will-change: opacity, transform;
 }
 
-.reveal-visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+.reveal-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
 }

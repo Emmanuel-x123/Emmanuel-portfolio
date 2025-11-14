@@ -10,7 +10,69 @@ export const Projects = () => {
   const filters = ["All", "Web", "React", "Django"];
 
   const projects = [
-    /* --- your projects unchanged --- */
+    {
+      title: "Fast Medic",
+      desc: "Quick access to medical solutions and health education.",
+      stack: ["HTML", "CSS", "Javascript"],
+      category: "Web",
+      link: "https://emmanuel-x123.github.io/solo-project.gitub.io/",
+      github: "https://github.com/Emmanuel-x123",
+      img: "https://emmanuel-x123.github.io/solo-project.gitub.io/img/hero%20mg.jpg",
+    },
+    {
+      title: "Swift Moove",
+      desc: "Financial platform with portfolio management tools.",
+      stack: ["HTML", "CSS", "Javascript"],
+      category: "Web",
+      link: "https://emmanuel-x123.github.io/Swift-moove/",
+      github: "https://github.com/Emmanuel-x123",
+      img: "https://emmanuel-x123.github.io/Swift-moove/logo.jpg",
+    },
+    {
+      title: "Swift Pay",
+      desc: "Secure online banking application.",
+      stack: ["HTML", "CSS", "Javascript", "Ajax", "Django"],
+      category: "Django",
+      link: null,
+      github: "https://github.com/Emmanuel-x123/SwiftPay",
+      img: "https://via.placeholder.com/500?text=Swift+Pay",
+    },
+    {
+      title: "Quotes Generator",
+      desc: "Generate motivational quotes instantly.",
+      stack: ["HTML", "CSS", "Javascript"],
+      category: "Web",
+      link: "https://emmanuel-x123.github.io/Quote-Generator/",
+      github: "https://github.com/Emmanuel-x123",
+      img: "https://t4.ftcdn.net/jpg/05/56/56/13/360_F_556561310_tyw1t2cdOulVCSrTooXNnCg1iqNTqNLh.jpg",
+    },
+    {
+      title: "Robot Friends",
+      desc: "React app that filters robot names.",
+      stack: ["React"],
+      category: "React",
+      link: "https://emmanuel-x123.github.io/Robot-friends/",
+      github: "https://github.com/Emmanuel-x123",
+      img: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…", // shortened
+    },
+    {
+      title: "IQbase",
+      desc: "LMS platform where users take courses or teach.",
+      stack: ["React"],
+      category: "React",
+      link: "https://iqbase.netlify.app/",
+      github: "https://github.com/Emmanuel-x123",
+      img: "data:image/svg+xml;base64,PHN2ZyB3aW…", // shortened
+    },
+    {
+      title: "ProNet",
+      desc: "A property networking website.",
+      stack: ["React", "node.js", "Express", "MongoDB"],
+      category: "React",
+      link: "https://pro-net-mu.vercel.app/",
+      github: "https://github.com/Emmanuel-x123/Task-tracker",
+      img: "https://pro-net-mu.vercel.app/pronet.png",
+    },
   ];
 
   const filteredProjects =
@@ -25,7 +87,6 @@ export const Projects = () => {
         min-h-screen 
         py-16 md:py-24 
         px-6 
-        bg-[#090C13]   /* 👈 iOS fix: solid background so blur works */
         bg-gradient-to-b
         from-[#090C13] via-[#0A0D14]/95 to-[#05070A]
       "
@@ -34,12 +95,7 @@ export const Projects = () => {
         <div className="max-w-7xl mx-auto">
 
           {/* Section Title */}
-          <h2 className="
-            text-center text-transparent bg-clip-text 
-            bg-gradient-to-r from-blue-500 to-cyan-400 
-            text-4xl font-extrabold mb-12
-            will-change-opacity will-change-transform
-          ">
+          <h2 className="text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 text-4xl font-extrabold mb-12">
             Featured Projects
           </h2>
 
@@ -50,14 +106,11 @@ export const Projects = () => {
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
                 className={`
-                  px-4 py-2 rounded-full text-sm 
-                  backdrop-blur-md border 
-                  transform-gpu
+                  px-4 py-2 rounded-full text-sm backdrop-blur-md border 
                   transition-all duration-300
-                  will-change-transform will-change-opacity
                   ${
                     activeFilter === filter
-                      ? "bg-blue-600 text-white border-blue-500 shadow-xl"
+                      ? "bg-blue-600 text-white border-blue-500 shadow-lg"
                       : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
                   }
                 `}
@@ -70,10 +123,7 @@ export const Projects = () => {
           {/* Project Grid */}
           <motion.div
             layout
-            className="
-              grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
-              will-change-transform transform-gpu
-            "
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
           >
             <AnimatePresence>
               {filteredProjects.map((p, i) => (
@@ -83,10 +133,9 @@ export const Projects = () => {
                   animate={{
                     opacity: 1,
                     y: 0,
-                    transition: { delay: i * 0.08 },
+                    transition: { delay: i * 0.1 },
                   }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="will-change-transform transform-gpu"
                 >
                   <Tilt glareEnable glareColor="lightblue" scale={1.05}>
                     <div
@@ -94,14 +143,12 @@ export const Projects = () => {
                         h-full 
                         p-6 
                         rounded-2xl 
-                        bg-[#ffffff0A]   /* iOS friendly */
-                        backdrop-blur-lg 
+                        backdrop-blur-xl 
+                        bg-white/5 
                         border border-white/10 
                         shadow-lg 
                         hover:shadow-2xl 
                         transition-all 
-                        transform-gpu
-                        will-change-transform will-change-opacity
                         cursor-pointer
                       "
                       onClick={() => setPreviewProject(p)}
@@ -109,16 +156,10 @@ export const Projects = () => {
                       <img
                         src={p.img}
                         alt={p.title}
-                        className="
-                          rounded-xl mb-4 
-                          w-full h-48 object-cover
-                          will-change-transform transform-gpu
-                        "
+                        className="rounded-xl mb-4 w-full h-48 object-cover"
                       />
 
-                      <h3 className="text-xl font-bold text-white mb-2">
-                        {p.title}
-                      </h3>
+                      <h3 className="text-xl font-bold text-white mb-2">{p.title}</h3>
 
                       <p className="text-slate-300 text-sm mb-4">{p.desc}</p>
 
@@ -129,10 +170,10 @@ export const Projects = () => {
                             className="
                               bg-blue-500/10 
                               text-blue-400 
-                              px-3 py-1 
+                              px-3 
+                              py-1 
                               text-xs 
                               rounded-full
-                              transform-gpu
                             "
                           >
                             {tech}
@@ -171,15 +212,7 @@ export const Projects = () => {
           <AnimatePresence>
             {previewProject && (
               <motion.div
-                className="
-                  fixed inset-0 
-                  bg-black/70 
-                  backdrop-blur-xl 
-                  flex items-center justify-center p-4 
-                  z-50 
-                  will-change-opacity transform-gpu
-                  h-[100dvh]    /* iOS safe full height */
-                "
+                className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 z-50"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 onClick={() => setPreviewProject(null)}
@@ -189,15 +222,14 @@ export const Projects = () => {
                     bg-[#0B0F17] 
                     rounded-2xl 
                     p-6 
-                    max-w-lg w-full 
+                    max-w-lg 
+                    w-full 
                     border border-white/10 
                     shadow-2xl 
                     relative
-                    transform-gpu
-                    will-change-transform
                   "
-                  initial={{ scale: 0.85, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
+                  initial={{ scale: 0.85 }}
+                  animate={{ scale: 1 }}
                   onClick={(e) => e.stopPropagation()}
                 >
                   <h3 className="text-2xl font-bold text-white mb-4">
