@@ -1,36 +1,63 @@
 import { useState, useEffect } from "react";
 
-export const LoadingScreen = ({onComplete}) => {
-    const [text, setText] = useState("");  // Fixed: using useState instead of useEffect
-    const fullText = "<Hello world/>";
+export const LoadingScreen = ({ onComplete }) => {
+  const [text, setText] = useState("");
+  const [fade, setFade] = useState(false);
 
-    useEffect(() => {
-        let index = 0;
-        const interval = setInterval(() => {
-            setText(fullText.substring(0, index));
-            index++;
+  const fullText = "<Emmanuel.Dev />";
 
-            if (index > fullText.length) {
-                clearInterval(interval);
+  useEffect(() => {
+    let index = 0;
 
-                setTimeout(() => {
-                    onComplete()
-                }, 1000)
-            }
-        }, 100);
+    const interval = setInterval(() => {
+      setText(fullText.substring(0, index));
 
-        return () => clearInterval(interval);
-    }, [onComplete]);  // Added empty dependency array to run only once
+      // play sound per character
+      if (index < fullText.length && fullText[index] !== " ") {
+        const keySound = new Audio("/typing.mp3");
+        keySound.volume = 0.3;
+        keySound.play();
+      }
 
-    return (
-        <div className="fixed inset-0 z-50  text-blue-500 flex flex-col items-center justify-center">
-            <div className="mb-4 text-4xl font-mono font-bold">
-                {text}<span className="animate-blink ml-1"> | </span>
-            </div>
+      index++;
 
-            <div className="w-[200px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
-                <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_5px_#3b82f6] animate-loading-bar"></div>
-            </div>   
+      if (index > fullText.length) {
+        clearInterval(interval);
+
+        setFade(true); // fade out
+
+        setTimeout(() => {
+          onComplete();
+        }, 700);
+      }
+    }, 90);
+
+    return () => clearInterval(interval);
+  }, [onComplete]);
+
+  return (
+    <div
+      className={`fixed inset-0 z-50 bg-[#05070A] flex flex-col items-center justify-center text-blue-400
+      transition-opacity duration-700 ${fade ? "opacity-0" : "opacity-100"}`}
+    >
+
+      {/* Floating Logo */}
+      <div className="mb-6 animate-bounce-slow">
+        <div className="w-20 h-20 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/30 shadow-lg">
+          <span className="text-3xl font-bold text-blue-400">E</span>
         </div>
-    );
+      </div>
+
+      {/* Typing Effect */}
+      <div className="text-4xl sm:text-5xl font-mono font-bold mb-6 flex items-center">
+        {text}
+        <span className="animate-blink ml-1">|</span>
+      </div>
+
+      {/* Loading Bar */}
+      <div className="w-[220px] h-[3px] bg-blue-500/10 overflow-hidden rounded">
+        <div className="h-full w-[45%] bg-blue-500 animate-loading-bar shadow-[0_0_12px_#3b82f6]"></div>
+      </div>
+    </div>
+  );
 };

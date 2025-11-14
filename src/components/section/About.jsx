@@ -9,112 +9,167 @@ export const About = () => {
     "TailwindCSS",
     "React",
   ];
+
   const softSkills = [
     "Adaptability",
     "Teamwork",
-    "flexibilty",
+    "Flexibility",
     "Communication",
     "Problem-solving",
     "Creativity",
   ];
 
-  const backendSkills = [
-    "Python",
-    "Django",
-    "API Development",
-    "C# .NET"
-  ];
+  const backendSkills = ["Python", "Django", "API Development", "C# .NET"];
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center py-10 md:py-20 px-4 sm:px-6 lg:px-8">
+    <section
+      id="about"
+      className="
+        min-h-screen
+        flex items-center justify-center
+        py-16 md:py-24
+        px-4 sm:px-6 lg:px-8
+        bg-gradient-to-b from-[#0A0D14] via-[#0A0D14]/90 to-[#07090F]
+      "
+    >
       <RevealOnScroll>
         <div className="w-full max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+
+          {/* Section Title */}
+          <h2 className="text-center text-3xl sm:text-4xl font-extrabold mb-12 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
             About Me
           </h2>
-          
-          <div className="rounded-xl p-6 md:p-8 border-gray-200/10 border hover:-translate-y-1 transition-all duration-300">
-            <p className="text-gray-500 mb-6 text-sm sm:text-base md:text-lg">
-              Passionate developer with expertise in building scalable web applications and creating innovative solutions.
+
+          {/* Main Card */}
+          <div className="
+            rounded-2xl 
+            p-8 md:p-12 
+            backdrop-blur-xl 
+            bg-white/5 
+            border border-white/10 
+            shadow-lg 
+            hover:shadow-2xl 
+            transition-all 
+            duration-300
+          ">
+
+            {/* Intro */}
+            <p className="text-gray-300 leading-relaxed mb-10 text-base md:text-lg">
+              I’m a passionate software developer focused on creating
+              scalable, user-friendly web applications. I love building clean
+              interfaces, solving complex problems, and collaborating with
+              teams to bring digital products to life.
             </p>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-              {/* Frontend Skills */}
-              <div className="rounded-xl p-4 sm:p-6 hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-400">Frontend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-2 sm:px-3 rounded-full text-xs sm:text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+
+            {/* Skills Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+              {/* Shared Card Style */}
+              {[
+                { title: "Frontend", list: frontendSkills },
+                { title: "Soft Skills", list: softSkills },
+                { title: "Backend", list: backendSkills },
+              ].map((group, index) => (
+                <div
+                  key={index}
+                  className="
+                    rounded-xl 
+                    p-6 
+                    bg-white/5 
+                    border border-white/10
+                    backdrop-blur-md
+                    hover:-translate-y-1 
+                    transition-all 
+                    duration-300
+                  "
+                >
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-200 mb-4">
+                    {group.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {group.list.map((item, idx) => (
+                      <span
+                        key={idx}
+                        className="
+                          bg-blue-500/10 
+                          text-blue-400 
+                          py-1 px-3 
+                          rounded-full 
+                          text-xs sm:text-sm 
+                          hover:bg-blue-500/20 
+                          transition
+                        "
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              
-              {/* Soft Skills */}
-              <div className="rounded-xl p-4 sm:p-6 hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-400">SoftSkills</h3>
-                <div className="flex flex-wrap gap-2">
-                  {softSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-2 sm:px-3 rounded-full text-xs sm:text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Backend Skills */}
-              <div className="rounded-xl p-4 sm:p-6 hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-400">Backend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-2 sm:px-3 rounded-full text-xs sm:text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                </div>
+              ))}
+
             </div>
-            
+
             {/* Education & Experience */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mt-6 md:mt-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+
               {/* Education */}
-              <div className="p-4 sm:p-6 rounded-xl border-blue-500/10 border hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-400">&#128218; Education</h3>
-                <ul className="list-disc list-inside text-gray-400 space-y-2 text-sm sm:text-base">
+              <div className="
+                p-6
+                rounded-xl
+                bg-white/5 
+                border border-white/10 
+                backdrop-blur-md 
+                hover:-translate-y-1 
+                transition-all
+              ">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-200 mb-4">
+                  📚 Education
+                </h3>
+                <ul className="text-gray-300 space-y-2 text-sm sm:text-base">
                   <li>
-                    <strong>Frontend Dev</strong> - OTS INNOVATION
+                    <strong className="text-gray-100">Frontend Development</strong> — OTS Innovation
                   </li>
                   <li>
-                    Relevant Courses: Data structures, Web development, Version control and Hosting
+                    Relevant Courses: Data Structures, Web Development, Version Control, Hosting
                   </li>
                 </ul>
               </div>
-              
+
               {/* Experience */}
-              <div className="p-4 sm:p-6 rounded-xl border-blue-500/10 border hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-400">&#x1F4BC; Work Experience</h3>
-                <div className="space-y-3 sm:space-y-4 text-gray-400 text-sm sm:text-base">
+              <div className="
+                p-6 
+                rounded-xl 
+                bg-white/5 
+                border border-white/10 
+                backdrop-blur-md
+                hover:-translate-y-1 
+                transition-all
+              ">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-200 mb-4">
+                  💼 Experience
+                </h3>
+                <div className="space-y-4 text-gray-300 text-sm sm:text-base">
                   <div>
-                    <h4 className="font-semibold">Software Engineer at Skyline ICT Consult</h4>
-                    <p>Developed payment template and consumed backend logic in an LMS project</p>
+                    <h4 className="font-semibold text-gray-100">
+                      Software Engineer — Skyline ICT Consult
+                    </h4>
+                    <p>
+                      Built payment templates and integrated backend logic for an LMS platform.
+                    </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Intern at Swift Moove</h4>
-                    <p>Assisted in building the frontend for web application</p>
+                    <h4 className="font-semibold text-gray-100">
+                      Intern — Swift Moove
+                    </h4>
+                    <p>
+                      Assisted in building frontend UI for major product modules.
+                    </p>
                   </div>
                 </div>
               </div>
+
             </div>
+
           </div>
         </div>
       </RevealOnScroll>

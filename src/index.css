@@ -5,7 +5,7 @@ html, body{
   padding: 0;
   box-sizing: border-box;
   font-family: "Space Grotesk", sans-serif;
-  background: #FAFAFA;
+  background: #05070A;
   color: #333333;
 }
 
@@ -54,4 +54,22 @@ html, body{
 }
 html, body {
   height: -webkit-fill-available;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 0.9s infinite;
+}
+
+@keyframes loading-bar {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(250%); }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 1.4s infinite linear;
 }
