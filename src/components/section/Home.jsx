@@ -22,9 +22,12 @@ export const Home = () => {
           
           {/* Name / Title */}
           <h1 className="
-            text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
-            font-bold mb-6 leading-tight
-            bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent
+  text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+  font-bold mb-6 leading-tight
+  bg-gradient-to-r from-blue-400 to-cyan-300
+  bg-clip-text text-transparent
+  [-webkit-text-fill-color:transparent]
+  [-webkit-background-clip:text]
           ">
             Hi, I'm Emmanuel Okukusie.
           </h1>

@@ -93,9 +93,13 @@ export const Projects = () => {
     >
       <RevealOnScroll>
         <div className="max-w-7xl mx-auto">
-
           {/* Section Title */}
-          <h2 className="text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 text-4xl font-extrabold mb-12">
+          <h2
+            className="  text-center 
+  text-4xl font-extrabold mb-12
+  bg-gradient-to-r from-blue-500 to-cyan-400
+  bg-clip-text text-transparent"
+          >
             Featured Projects
           </h2>
 
@@ -159,7 +163,9 @@ export const Projects = () => {
                         className="rounded-xl mb-4 w-full h-48 object-cover"
                       />
 
-                      <h3 className="text-xl font-bold text-white mb-2">{p.title}</h3>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {p.title}
+                      </h3>
 
                       <p className="text-slate-300 text-sm mb-4">{p.desc}</p>
 
