@@ -19,7 +19,7 @@ export const About = () => {
     "Creativity",
   ];
 
-  const backendSkills = ["Python", "Django", "API Development", "C# .NET"];
+  const backendSkills = ["Python", "Django", "API Development","Node.js","Express", "C# .NET"];
 
   return (
     <section
