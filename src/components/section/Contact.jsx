@@ -48,8 +48,16 @@ export const Contact = () => {
 
   return (
     <section
-      id="contact"
-      className="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800"
+  id="contact"
+  className="
+    bg-[#0A0D14]
+    min-h-screen
+    w-full
+    flex items-center justify-center 
+    py-8 sm:py-12 md:py-16 lg:py-20 
+    px-4 sm:px-6 lg:px-8
+    ios-fix
+  "
     >
       <RevealOnScroll>
         <div className="w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
@@ -130,7 +138,7 @@ export const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full inline-flex items-center justify-center gap-3 py-3 px-4 rounded-lg font-medium text-white bg-gradient-to-r from-cyan-600 to-blue-600 shadow-md transition-transform duration-150 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed`}
+                  className={`w-full inline-flex items-center justify-center gap-3 py-3 px-4 rounded-lg font-medium text-white bg-blue-600 shadow-md transition-transform duration-150 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed`}
                 >
                   {isSubmitting ? (
                     <>

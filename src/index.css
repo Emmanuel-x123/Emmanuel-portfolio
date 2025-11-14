@@ -48,3 +48,10 @@ html, body{
   opacity: 1;
   transform: translateY(0);
 }
+
+.ios-fix {
+  min-height: -webkit-fill-available;
+}
+html, body {
+  height: -webkit-fill-available;
+}
