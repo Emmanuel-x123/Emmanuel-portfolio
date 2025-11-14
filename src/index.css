@@ -73,3 +73,12 @@ html, body {
 .animate-loading-bar {
   animation: loading-bar 1.4s infinite linear;
 }
+
+.reveal-base {
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}

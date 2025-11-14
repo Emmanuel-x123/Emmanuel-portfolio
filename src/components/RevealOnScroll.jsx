@@ -1,19 +1,40 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react";
 
+export const RevealOnScroll = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
 
-export const RevealOnScroll = ({children}) => {
-    const ref = useRef(null)
+  useEffect(() => {
+    const element = ref.current;
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-         if(entry.isIntersecting){
-            ref.current.classList.add("visible")
-         }
-        }, {threshold:0.2, rootMargin:"0px 0px -50px 0px"});
-        if (ref.current) observer.observe(ref.current);
+    if (!element) return;
 
-        return () => observer.disconnect();
-    });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          element.classList.add("reveal-visible");
+        }
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -10% 0px",
+      }
+    );
 
-  return <div ref={ref} className="reveal">{children}</div>
-}
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className="
+        reveal-base 
+        opacity-0 translate-y-8 
+        transform-gpu will-change-transform will-change-opacity
+      "
+    >
+      {children}
+    </div>
+  );
+};
