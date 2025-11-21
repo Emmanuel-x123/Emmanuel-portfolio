@@ -53,7 +53,7 @@ export const Projects = () => {
       category: "React",
       link: "https://emmanuel-x123.github.io/Robot-friends/",
       github: "https://github.com/Emmanuel-x123",
-      img: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…", // shortened
+      img: "https://robohash.org/1?200x200", 
     },
     {
       title: "IQbase",
@@ -62,7 +62,7 @@ export const Projects = () => {
       category: "React",
       link: "https://iqbase.netlify.app/",
       github: "https://github.com/Emmanuel-x123",
-      img: "data:image/svg+xml;base64,PHN2ZyB3aW…", // shortened
+      img: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPCEtLSBEYXJrZXIgYmx1ZSBjaXJjbGUgd2l0aCBRIC0tPg0KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iIzFFOTBGRiIgLz4NCiAgPHRleHQgeD0iNTAiIHk9IjY1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNTAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UTwvdGV4dD4NCiAgDQogIDwhLS0gQ29ycmVjdGVkIElRYmFzZSB0ZXh0IChub3cgaW5jbHVkZXMgImUiKSAtLT4NCiAgPHRleHQgeD0iOTUiIHk9IjYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMzMzIj5JUWJhc2U8L3RleHQ+DQo8L3N2Zz4=",
     },
     {
       title: "ProNet",
