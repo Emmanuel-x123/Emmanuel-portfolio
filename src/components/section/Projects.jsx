@@ -28,8 +28,18 @@ export const Projects = () => {
     const [activeFilter, setActiveFilter] = useState("All");
     const [openProject, setOpenProject] = useState(null); // Stores the full project object
 
-    const filters = ["All", "Web", "React", "Django"];
+    const filters = ["All", "Web", "React", "Django", "Mobile"];
     const projects = [
+     {
+        title: "ShopWave",
+        desc: "Eccommerce Moble application",
+        stack: ["React", "React Native", "Node Express js"],
+        category: "Mobile",
+        link: "https://shopwave-ztsa.onrender.com/login",
+        github: "https://github.com/Emmanuel-x123",
+        img: "https://res.cloudinary.com/dfoarz416/image/upload/shopwave-lg_oammpx.png",
+        longDesc: "This is an On going project built with React native an Node for the backend, leveraged cloudinary inngest mongoose as some for the key dependencies."
+      },
       {
         title: "Fast Medic",
         desc: "Quick access to medical solutions and health education.",
