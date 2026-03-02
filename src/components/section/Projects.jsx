@@ -36,7 +36,7 @@ export const Projects = () => {
         stack: ["React", "React Native", "Node Express js"],
         category: "Mobile",
         link: "https://shopwave-ztsa.onrender.com/login",
-        github: "https://github.com/Emmanuel-x123",
+        github: "https://github.com/Emmanuel-x123/ShopWave/tree/main/api",
         img: "https://res.cloudinary.com/dfoarz416/image/upload/shopwave-lg_oammpx.png",
         longDesc: "This is an On going project built with React native an Node for the backend, leveraged cloudinary inngest mongoose as some for the key dependencies."
       },
