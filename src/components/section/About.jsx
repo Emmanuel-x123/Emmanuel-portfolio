@@ -1,13 +1,33 @@
+import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
+
+  // Global toggle state (works for any section)
+  const [expandedSections, setExpandedSections] = useState({});
+
+  const toggleSection = (title) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }));
+  };
+
   const frontendSkills = [
-    "HTML",
-    "CSS",
-    "Javascript",
+    "HTML5",
+    "CSS3",
+    "JavaScript (ES6+)",
     "Bootstrap",
     "TailwindCSS",
-    "React",
+    "React.js",
+    "React Router",
+    "Redux",
+    "Context API",
+    "useReducer",
+    "Styled-Components (CSS-in-JS)",
+    "Responsive Design (Grid & Flexbox)",
+    "Component-Driven Architecture",
+    "Firebase Integration"
   ];
 
   const softSkills = [
@@ -19,7 +39,28 @@ export const About = () => {
     "Creativity",
   ];
 
-  const backendSkills = ["Python", "Django", "API Development","Node.js","Express", "C# .NET"];
+  const backendSkills = [
+    "Node.js",
+    "Express.js",
+    "RESTful API Design",
+    "MVC Architecture",
+    "MongoDB",
+    "Mongoose",
+    "PostgreSQL",
+    "JWT Authentication",
+    "Role-Based Access Control (RBAC)",
+    "Bcrypt",
+    "API Rate Limiting",
+    "CORS & Helmet",
+    "Third-party API Integration",
+    "Paystack Integration",
+    "WebSockets",
+    "Docker",
+    "CI/CD (GitHub Actions)",
+    "Render Deployment",
+    "Jest",
+    "Redis Caching"
+  ];
 
   return (
     <section
@@ -35,12 +76,10 @@ export const About = () => {
       <RevealOnScroll>
         <div className="w-full max-w-6xl mx-auto">
 
-          {/* Section Title */}
           <h2 className="text-center text-3xl sm:text-4xl font-extrabold mb-12 gradient-text">
             About Me
           </h2>
 
-          {/* Main Card */}
           <div className="
             rounded-2xl 
             p-8 md:p-12 
@@ -53,7 +92,6 @@ export const About = () => {
             duration-300
           ">
 
-            {/* Intro */}
             <p className="text-gray-300 leading-relaxed mb-10 text-base md:text-lg">
               I’m a passionate software developer focused on creating
               scalable, user-friendly web applications. I love building clean
@@ -61,58 +99,75 @@ export const About = () => {
               teams to bring digital products to life.
             </p>
 
-            {/* Skills Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-              {/* Shared Card Style */}
               {[
                 { title: "Frontend", list: frontendSkills },
                 { title: "Soft Skills", list: softSkills },
                 { title: "Backend", list: backendSkills },
-              ].map((group, index) => (
-                <div
-                  key={index}
-                  className="
-                    rounded-xl 
-                    p-6 
-                    bg-white/5 
-                    border border-white/10
-                    backdrop-blur-md
-                    hover:-translate-y-1 
-                    transition-all 
-                    duration-300
-                  "
-                >
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-200 mb-4">
-                    {group.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {group.list.map((item, idx) => (
-                      <span
-                        key={idx}
-                        className="
-                          bg-blue-500/10 
-                          text-blue-400 
-                          py-1 px-3 
-                          rounded-full 
-                          text-xs sm:text-sm 
-                          hover:bg-blue-500/20 
-                          transition
-                        "
+              ].map((group, index) => {
+
+                const isExpanded = expandedSections[group.title];
+                const skillsToShow = !isExpanded
+                  ? group.list.slice(0, 5)
+                  : group.list;
+
+                return (
+                  <div
+                    key={index}
+                    className="
+                      rounded-xl 
+                      p-6 
+                      bg-white/5 
+                      border border-white/10
+                      backdrop-blur-md
+                      hover:-translate-y-1 
+                      transition-all 
+                      duration-300
+                    "
+                  >
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-200 mb-4">
+                      {group.title}
+                    </h3>
+
+                    <div className="flex flex-wrap gap-2">
+                      {skillsToShow.map((item, idx) => (
+                        <span
+                          key={idx}
+                          className="
+                            bg-blue-500/10 
+                            text-blue-400 
+                            py-1 px-3 
+                            rounded-full 
+                            text-xs sm:text-sm 
+                            hover:bg-blue-500/20 
+                            transition
+                          "
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+
+                    {group.list.length > 5 && (
+                      <button
+                        onClick={() => toggleSection(group.title)}
+                        className="mt-4 text-sm text-blue-400 hover:text-blue-300 transition"
                       >
-                        {item}
-                      </span>
-                    ))}
+                        {isExpanded ? "Show Less" : "+ More"}
+                      </button>
+                    )}
+
                   </div>
-                </div>
-              ))}
+                );
+              })}
 
             </div>
 
-            {/* Education & Experience */}
+            {/* Education & Experience stays untouched */}
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
 
-              {/* Education */}
               <div className="
                 p-6
                 rounded-xl
@@ -135,7 +190,6 @@ export const About = () => {
                 </ul>
               </div>
 
-              {/* Experience */}
               <div className="
                 p-6 
                 rounded-xl 
